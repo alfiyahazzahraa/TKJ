@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #fdf2ff, #ecfeff);
+  color: #444;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #9333ea;
+}
+
+nav button {
+  background: none;
+  border: none;
+  margin-left: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #555;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  color: #9333ea;
+  transform: scale(1.1);
+}
+
+/* JAM */
+.time-box {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #666;
+  animation: fade 1s infinite alternate;
+}
+
+@keyframes fade {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+/* PAGE */
+main {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+  animation: slide 0.5s ease;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page h1 {
+  font-size: 38px;
+  color: #7c3aed;
+}
+
+.page p {
+  margin-top: 15px;
+  color: #666;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 220px;
+  padding: 25px;
+  border-radius: 18px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.pink {
+  background: linear-gradient(135deg, #f9a8d4, #fb7185);
+}
+
+.violet {
+  background: linear-gradient(135deg, #c4b5fd, #8b5cf6);
+}
+
+.sky {
+  background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Soft UI Sederhana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">SoftUI</div>
+    <nav>
+      <button onclick="openPage('home')">Home</button>
+      <button onclick="openPage('profile')">Profile</button>
+      <button onclick="openPage('project')">Project</button>
+      <button onclick="openPage('contact')">Contact</button>
+    </nav>
+  </header>
+
+  <!-- JAM GERAK -->
+  <div class="time-box" id="clock">Loading time...</div>
+
+  <!-- MAIN -->
+  <main>
+    <section id="home" class="page active">
+      <h1>Welcome ✨</h1>
+      <p>Website sederhana dengan tampilan soft dan colorful.</p>
+    </section>
+
+    <section id="profile" class="page">
+      <h1>Profile</h1>
+      <p>Dibuat untuk latihan HTML, CSS, dan JavaScript.</p>
+    </section>
+
+    <section id="project" class="page">
+      <h1>Project</h1>
+      <div class="cards">
+        <div class="card pink">UI Design</div>
+        <div class="card violet">Frontend</div>
+        <div class="card sky">Backend</div>
+      </div>
+    </section>
+
+    <section id="contact" class="page">
+      <h1>Contact</h1>
+      <p>Email : belfi@mail.com</p>
+      <p>Instagram : @belfi</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 SoftUI
+  </footer>
+
+  <!-- JS -->
+  <script>
+    /* JAM REAL-TIME */
+    function updateClock() {
+      const now = new Date();
+
+      const jam = now.getHours().toString().padStart(2, "0");
+      const menit = now.getMinutes().toString().padStart(2, "0");
+      const detik = now.getSeconds().toString().padStart(2, "0");
+
+      const tanggal = now.toLocaleDateString("id-ID", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+
+      document.getElementById("clock").innerHTML =
+        `${tanggal} ⏰ ${jam}:${menit}:${detik}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    /* SPA NAVIGATION */
+    function openPage(pageId) {
+      const pages = document.querySelectorAll(".page");
+      pages.forEach(page => page.classList.remove("active"));
+      document.getElementById(pageId).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
